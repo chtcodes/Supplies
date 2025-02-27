@@ -1,13 +1,187 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@fontsource/inter/100.css";
+@import "../node_modules/@fontsource/inter/200.css";
+@import "../node_modules/@fontsource/inter/300.css";
+@import "../node_modules/@fontsource/inter/400.css";
+@import "../node_modules/@fontsource/inter/500.css";
+@import "../node_modules/@fontsource/inter/700.css";
+@import "../node_modules/@fontsource/inter/800.css";
+
+
+@import "../node_modules/@fontsource/montserrat/100.css";
+@import "../node_modules/@fontsource/montserrat/200.css";
+@import "../node_modules/@fontsource/montserrat/300.css";
+@import "../node_modules/@fontsource/montserrat/400.css";
+@import "../node_modules/@fontsource/montserrat/500.css";
+@import "../node_modules/@fontsource/montserrat/600.css";
+@import "../node_modules/@fontsource/montserrat/700.css";
+@import "../node_modules/@fontsource/montserrat/800.css";
+
+@import "../node_modules/@fontsource/material-icons-outlined/400.css";
+
+
+
+/* Icons */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons'), local('Material Icons Outlined'), url(../node_modules/@fontsource/material-icons-outlined/files/material-icons-outlined-latin-400-normal.woff2) format('woff2');
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    vertical-align: middle;
+    line-height: 1;
+    letter-spacing: normal;
+    padding-bottom: 3px;
+   
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
+
+/* Typography */
+
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
 }
+
+
+.p-large{
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+}
+.p-medium{
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.p-small{
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+.p-xsmall{
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+
+
+.label-large{
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing:2.16px;
+}
+.label-medium{
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing:1.92px;
+}
+.label-small{
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing:1.68px;
+}
+.label-xsmall{
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing:1.44px;
+}
+        
+
+
+
+.title-xxlarge{
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    letter-spacing:-0.8px;
+}
+.title-xlarge{
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing:-0.72px;
+}
+.title-large{
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing:-0.64px;
+}
+.title-medium{
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing:-0.56px;
+}
+.title-small{
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing:-0.48px;
+}
+.title-xsmall{
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing:-0.4px;
+}
+          
+
+
+
+/* Color Palette */
 
 .custom-primary{
-    background-color: rgb(15, 42, 29);
+    background-color: rgb(10, 31, 21);
+}
+.custom-primary2{
+    background-color: rgb(32, 115, 69);
 }
 
+
+.custom-success{
+    background-color: rgb(32, 115, 69);
+}
+
+.custom-header-background{
+    background-color: rgb(247, 252, 246);
+}
 
 html,
 body {

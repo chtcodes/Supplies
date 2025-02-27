@@ -1,1 +1,63 @@
-<app-login></app-login>
+
+
+<nav class="navbar navbar-expand-sm  navbar-dark custom-header-background px-3 py-1 border-bottom">
+  <div class="container-fluid">
+
+          <a class="navbar-brand ms-2" href="javascript:void(0)">
+            <img  src="/LogoSuppliesHeader.svg" alt="logo-supplies" height="35px">
+          </a>
+       
+        <div class="collapse navbar-collapse " id="mynavbar">
+
+          <div class="navbar-nav me-auto">
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control border-light custom-header-background small" type="search" placeholder="Home/" aria-label="Search">
+              
+            </form>
+          </div>
+
+          <div class="d-flex">
+            <div class="btn-group-sm mx-2" role="group" aria-label="Button group">
+              
+              <button type="button" class="btn btn-outline-secondary border-light rounded-circle ms-2">
+                <i class="material-icons">contact_support</i>
+              </button>
+              <button type="button" class="btn btn-outline-secondary border-light rounded-circle ms-2">
+                <i class="material-icons">notifications</i>
+              </button>
+              <button type="button" class="btn btn-outline-secondary border-light rounded-circle ms-2">
+                <i class="material-icons">settings</i>
+              </button>
+              <button type="button" class="btn btn-outline-secondary border-light rounded-circle ms-2">
+                <i class="material-icons">account_circle</i>
+              </button>
+              
+            </div>
+      
+            <button type="button" class="btn btn-outline-secondary ms-2 small">
+              Sign out
+            </button>
+          </div>
+
+        </div>
+    
+  </div>  
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid px-3">
+  <router-outlet></router-outlet>
+</div>
