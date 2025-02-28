@@ -20,6 +20,70 @@
 @import "../node_modules/@fontsource/material-icons-outlined/400.css";
 
 
+.custom-right-menu{
+    position: relative;
+    display: inline-block;
+    
+}
+
+.custom-dropdown-button{
+
+}
+
+.custom-dropdown-menu{
+    display: none;
+    position: absolute;
+    min-width: 158px;
+    z-index: 1;
+    background-color: white;
+}
+
+.custom-dropdown-menu li{
+    padding:  0px 10px 0px 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.custom-dropdown-menu a{
+    padding:  2px 10px 0px 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.custom-dropdown-menu li a{
+    padding: 0px 10px;
+    display: block;
+    text-decoration: none;
+    color: rgb(25, 25, 25);
+}
+
+.custom-right-menu:hover .custom-dropdown-menu{
+    display: block;
+}
+
+.custom-right-menu:hover .custom-dropdown-button{
+    background-color: gray;
+}
+
+.custom-dropdown-menu a:hover{
+    background-color:rgb(211, 212, 213);
+    font-size: 14px;
+    border-radius: 4px;
+    padding:  0px 10px;
+}
+
+
+
+.custom-ul{
+    list-style-type: none; /* Remove bullets */
+   padding: 0 5px;/* Remove padding */
+    margin: 0 2px; /* Remove margins */
+    font-size: 14px;
+    list-style: none;
+  }
+
+
+
+
+
 
 /* Icons */
 @font-face {

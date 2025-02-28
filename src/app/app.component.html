@@ -3,46 +3,151 @@
 <nav class="navbar navbar-expand-sm  navbar-dark custom-header-background px-3 py-1 border-bottom">
   <div class="container-fluid">
 
+        <!-- dropdown menu -->
+         <div class="btn-group-sm dropdown" role="group" aria-label="Button group">
+            <button type="button" data-bs-toggle="dropdown" aria-expanded="false" class="btn dropdown-toggle btn-outline-secondary border-light me-2" title="View menu">
+              <i class="material-icons">menu</i>
+            </button>
+  
+            <ul class="dropdown-menu ">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+
+          <!-- logo -->
           <a class="navbar-brand ms-2" href="javascript:void(0)">
             <img  src="/LogoSuppliesHeader.svg" alt="logo-supplies" height="35px">
           </a>
        
-        <div class="collapse navbar-collapse " id="mynavbar">
+          <!-- navigation links - center -->
+        <div class="collapse navbar-collapse me-auto ms-2" id="mynavbar">
 
-          <div class="navbar-nav me-auto">
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control border-light custom-header-background small" type="search" placeholder="Home/" aria-label="Search">
-              
-            </form>
-          </div>
+          <!-- center content -->
 
+            <ul class="navbar-nav">
+              <li class="nav-item" >
+                  <a class="nav-link text-dark btn btn-light mx-1" >Home</a>
+              </li>
+              <li class="nav-item" >
+                  <a class="nav-link text-dark btn btn-light mx-1">Supply Requests</a>
+              </li>
+              <li class="nav-item" >
+                  <a class="nav-link text-dark btn btn-light mx-1" >Procurement</a>
+              </li>
+              <li class="nav-item" >
+                  <a class="nav-link text-dark btn btn-light mx-1" >Reports</a>
+              </li>
+              <li class="nav-item" >
+                  <a class="nav-link text-dark btn btn-light mx-1" >Vendors</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-dark btn btn-light mx-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Documents
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">PO</a>
+                  <a class="dropdown-item" href="#">GRN</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Payment voucher</a>
+                </div>
+              </li>
+              <li class="nav-item" >
+                  <a class="nav-link text-dark btn btn-light mx-1" >Users</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-dark btn btn-light mx-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Logs
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Activity log</a>
+                  <a class="dropdown-item" href="#">Audit log</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Stores log</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled text-secondary " href="#">Accounts</a>
+              </li>
+          </ul>
+        </div>
+            
+        
+
+
+
+
+          <!-- right section-->
           <div class="d-flex">
+
+
+            <!-- search -->
+            <!-- <form class="form-inline my-2 my-lg-0">
+              <input class="form-control border-light custom-header-background small" type="search" placeholder="Search" aria-label="Search">
+            </form> -->
+
             <div class="btn-group-sm mx-2" role="group" aria-label="Button group">
               
-              <button type="button" class="btn btn-outline-secondary border-light rounded-circle ms-2">
+              <button type="button" class="btn btn-outline-secondary border-light rounded-circle ms-2"  title="Contact support" >
                 <i class="material-icons">contact_support</i>
               </button>
-              <button type="button" class="btn btn-outline-secondary border-light rounded-circle ms-2">
+              <button type="button" class="btn btn-outline-secondary border-light rounded-circle ms-2" title="Notifications">
                 <i class="material-icons">notifications</i>
               </button>
-              <button type="button" class="btn btn-outline-secondary border-light rounded-circle ms-2">
+              <button type="button" class="btn btn-outline-secondary border-light rounded-circle ms-2" title="Settings">
                 <i class="material-icons">settings</i>
               </button>
-              <button type="button" class="btn btn-outline-secondary border-light rounded-circle ms-2">
+              <button type="button" class="btn btn-outline-secondary border-light rounded-circle ms-2" title="User">
                 <i class="material-icons">account_circle</i>
               </button>
               
             </div>
       
+            <!-- signout button -->
             <button type="button" class="btn btn-outline-secondary ms-2 small">
               Sign out
             </button>
+
           </div>
 
-        </div>
     
   </div>  
 </nav>
+
+
+<!-- nav toolbar for internal navigation -->
+
+<div class="btn-toolbar mx-3 py-1  "  role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group me-2" role="group" aria-label="First group">
+   
+    <button type="button" class="btn btn-light" style="font-size: 14px;" >Supply Requests</button>
+  </div>
+  <div class="btn-group me-2" role="group" aria-label="Second group">
+    <button type="button" class="btn btn-light" style="font-size: 14px;">Create new supply request</button>
+  </div>
+  
+  <div class="btn-group me-2 custom-right-menu" role="group">
+    <button id="btnGroupDrop1 custom-dropdown-button" type="button" class="btn btn-light dropdown-toggle " style="font-size: 14px;" data-bs-toggle="dropdown" aria-expanded="false">
+      Filter supply requests
+    </button>
+
+    <ul class=" custom-dropdown-menu custom-ul" aria-labelledby="btnGroupDrop1">
+      <li><a class="custom-dropdown-item" href="#">Approved</a></li>
+      <li><a class="custom-dropdown-item" href="#">In progress</a></li>
+      <li><a class="custom-dropdown-item" href="#">Declined</a></li>
+      <li><a class="custom-dropdown-item" href="#">Closed</a></li>
+    </ul>
+  </div>
+
+</div>
+
+
+
+
+
+
+
 
 
 
