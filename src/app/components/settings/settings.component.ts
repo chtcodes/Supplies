@@ -11,7 +11,7 @@ import { DesignationsComponent } from '../designations/designations.component';
   styleUrls: ['./settings.component.css','../../../styles.css']
 })
 export class SettingsComponent {
-  currentComponent : string = '';
+  currentComponent : string = 'designations';
 
 
   changeTab(tabName :string ){
