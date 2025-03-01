@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- nav toolbar for internal navigation -->
+        <div class="btn-toolbar mx-2 py-1 mb-1  " role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-1" role="group" aria-label="First group">
+
+                <button type="button" class="btn btn-light" style="font-size: 14px;">
+                    User management
+                </button>
+            </div>
+            <div class="btn-group m-1" role="group" aria-label="Second group">
+                <button class="btn btn-light" type="button" style="font-size: 14px;">
+                    Destinations management
+                </button>
+            </div>
+
+            <div class="btn-group m-1" role="group" aria-label="Second group">
+                <button class="btn btn-light" type="button" style="font-size: 14px;">
+                    Destinations management
+                </button>
+            </div>
+
+            <div class="btn-group m-1" role="group" aria-label="Second group">
+                <button class="btn btn-light" type="button" style="font-size: 14px;">
+                    Departments management
+                </button>
+            </div>
+
+            <div class="btn-group m-1" role="group" aria-label="Second group">
+                <button class="btn btn-light" type="button" style="font-size: 14px;">
+                    Faculties management
+                </button>
+            </div>
+            <div class="btn-group m-1" role="group" aria-label="Second group">
+                <button class="btn btn-light" type="button" style="font-size: 14px;">
+                    Roles management
+                </button>
+            </div>
+            <div class="btn-group m-1" role="group" aria-label="Second group">
+                <button class="btn btn-light" type="button" style="font-size: 14px;">
+                    Priviledges management
+                </button>
+            </div>
+
+            <div class="btn-group m-1" role="group" aria-label="Second group">
+                <button class="btn btn-light" type="button" style="font-size: 14px;">
+                    Items management
+                </button>
+            </div>
+
+            <div class="btn-group m-1" role="group" aria-label="Second group">
+                <button class="btn btn-light" type="button" style="font-size: 14px;">
+                    Procurement management
+                </button>
+            </div>
+            <div class="btn-group m-1" role="group" aria-label="Second group">
+                <button class="btn btn-light" type="button" style="font-size: 14px;">
+                    Stores log management
+                </button>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-12"  *ngIf="currentComponent == 'destinations'" >
+              <app-destinations></app-destinations>
+            </div>
+            <div class="col-12">
+             
+            </div>
+          </div>
+
+
+    </div>

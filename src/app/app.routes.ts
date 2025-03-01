@@ -3,6 +3,7 @@ import { IndexComponent } from './components/index/index.component';
 import { SupplyRequestComponent } from './components/supply-request/supply-request.component';
 import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 export const routes: Routes = [
     {
@@ -22,6 +23,10 @@ export const routes: Routes = [
     {
         path: 'supplyRequest',
         component: SupplyRequestComponent
+    },
+    {
+        path: 'settings',
+        component: SettingsComponent
     },
     {
         path: 'users',
