@@ -1,17 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { DestinationsComponent } from '../destinations/destinations.component';
+import { DesignationsComponent } from '../designations/designations.component';
 
 @Component({
   selector: 'app-settings',
   standalone: true,
-  imports: [CommonModule, DestinationsComponent],
+  imports: [CommonModule,DesignationsComponent ],
   templateUrl: './settings.component.html',
-  styleUrl: './settings.component.css'
+  styleUrls: ['./settings.component.css','../../../styles.css']
 })
 export class SettingsComponent {
-  currentComponent : string = 'destinations';
+  currentComponent : string = '';
 
 
   changeTab(tabName :string ){

@@ -9,16 +9,13 @@
                 </button>
             </div>
             <div class="btn-group m-1" role="group" aria-label="Second group">
-                <button class="btn btn-light" type="button" style="font-size: 14px;">
-                    Destinations management
+                <button class="btn btn-light" (click)="changeTab('designations')" 
+                [ngClass]="currentComponent == 'designations' ? 'btn custom-hover' : 'btn btn-light'" type="button" style="font-size: 14px;">
+                    Designations management
                 </button>
             </div>
 
-            <div class="btn-group m-1" role="group" aria-label="Second group">
-                <button class="btn btn-light" type="button" style="font-size: 14px;">
-                    Destinations management
-                </button>
-            </div>
+           
 
             <div class="btn-group m-1" role="group" aria-label="Second group">
                 <button class="btn btn-light" type="button" style="font-size: 14px;">
@@ -65,8 +62,8 @@
 
 
         <div class="row">
-            <div class="col-12"  *ngIf="currentComponent == 'destinations'" >
-              <app-destinations></app-destinations>
+            <div class="col-12"  *ngIf="currentComponent == 'designations'" >
+              <app-designations></app-designations>
             </div>
             <div class="col-12">
              
