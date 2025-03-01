@@ -1,6 +1,4 @@
-
-
-<nav class="navbar navbar-expand-sm  navbar-dark custom-header-background px-3 py-1 border-bottom">
+<nav class="navbar navbar-expand-sm   custom-header-background px-3 py-1 border-bottom">
   <div class="container-fluid">
 
         <!-- dropdown menu -->
@@ -10,14 +8,14 @@
             </button>
   
             <ul class="dropdown-menu ">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Supply requests</a></li>
+              <li><a class="dropdown-item" href="#">Procurement</a></li>
+              <li><a class="dropdown-item" href="#">Reports</a></li>
             </ul>
           </div>
 
           <!-- logo -->
-          <a class="navbar-brand ms-2" href="javascript:void(0)">
+          <a class="navbar-brand ms-2" routerLink="/home">
             <img  src="/LogoSuppliesHeader.svg" alt="logo-supplies" height="35px">
           </a>
        
@@ -28,13 +26,13 @@
 
             <ul class="navbar-nav">
               <li class="nav-item" >
-                  <a class="nav-link text-dark btn btn-light mx-1" >Home</a>
+                  <a class="nav-link text-dark btn btn-light mx-1 text-dark"  routerLink="/home" routerLinkActive="active" >Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-dark btn btn-light mx-1 " routerLink="/supplyRequest" routerLinkActive="active">Supply Requests</a>
               </li>
               <li class="nav-item" >
-                  <a class="nav-link text-dark btn btn-light mx-1">Supply Requests</a>
-              </li>
-              <li class="nav-item" >
-                  <a class="nav-link text-dark btn btn-light mx-1" >Procurement</a>
+                  <a class="nav-link text-dark btn btn-light mx-1"  >Procurement</a>
               </li>
               <li class="nav-item" >
                   <a class="nav-link text-dark btn btn-light mx-1" >Reports</a>
@@ -42,8 +40,9 @@
               <li class="nav-item" >
                   <a class="nav-link text-dark btn btn-light mx-1" >Vendors</a>
               </li>
+
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-dark btn btn-light mx-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle text-dark btn btn-light mx-1"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Documents
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -54,10 +53,10 @@
                 </div>
               </li>
               <li class="nav-item" >
-                  <a class="nav-link text-dark btn btn-light mx-1" >Users</a>
+                  <a class="nav-link text-dark btn btn-light mx-1" routerLink="/users" routerLinkActive="active"  >Users</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-dark btn btn-light mx-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle text-dark btn btn-light mx-1"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Logs
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -68,7 +67,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled text-secondary " href="#">Accounts</a>
+                <a class="nav-link disabled text-secondary " >Accounts</a>
               </li>
           </ul>
         </div>
@@ -116,53 +115,14 @@
 </nav>
 
 
-<!-- nav toolbar for internal navigation -->
 
-<div class="btn-toolbar mx-3 py-1  "  role="toolbar" aria-label="Toolbar with button groups">
-  <div class="btn-group me-2" role="group" aria-label="First group">
-   
-    <button type="button" class="btn btn-light" style="font-size: 14px;" >Supply Requests</button>
-  </div>
-  <div class="btn-group me-2" role="group" aria-label="Second group">
-    <button type="button" class="btn btn-light" style="font-size: 14px;">Create new supply request</button>
-  </div>
-  
-  <div class="btn-group me-2 custom-right-menu" role="group">
-    <button id="btnGroupDrop1 custom-dropdown-button" type="button" class="btn btn-light dropdown-toggle " style="font-size: 14px;" data-bs-toggle="dropdown" aria-expanded="false">
-      Filter supply requests
-    </button>
-
-    <ul class=" custom-dropdown-menu custom-ul" aria-labelledby="btnGroupDrop1">
-      <li><a class="custom-dropdown-item" href="#">Approved</a></li>
-      <li><a class="custom-dropdown-item" href="#">In progress</a></li>
-      <li><a class="custom-dropdown-item" href="#">Declined</a></li>
-      <li><a class="custom-dropdown-item" href="#">Closed</a></li>
-    </ul>
-  </div>
-
-</div>
+<div class="container-fluid">
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container-fluid px-3">
   <router-outlet></router-outlet>
+
 </div>
+
+
+
+  

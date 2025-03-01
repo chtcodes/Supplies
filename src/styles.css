@@ -19,6 +19,14 @@
 
 @import "../node_modules/@fontsource/material-icons-outlined/400.css";
 
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: rgb(211, 212, 213);
+  }
+
+.custom-hover{
+    background-color: rgb(198, 199, 200);
+}
+
 
 .custom-right-menu{
     position: relative;
@@ -75,13 +83,22 @@
 .custom-ul{
     list-style-type: none; /* Remove bullets */
    padding: 0 5px;/* Remove padding */
-    margin: 0 2px; /* Remove margins */
+    margin: 35px 2px; /* Remove margins */
     font-size: 14px;
     list-style: none;
   }
 
+  th{
+    font-weight: 400;
+    font-family: Inter;
+    text-align:center;
+    vertical-align: top;
+    font-size: 12px;
+  }
 
-
+  td{
+    font-size: 12px;
+  }
 
 
 
@@ -213,7 +230,7 @@ body{
 }
 .title-small{
     font-family: "Inter";
-    font-weight: 700;
+    font-weight: 400;
     font-size: 24px;
     line-height: 32px;
     letter-spacing:-0.48px;
@@ -236,6 +253,13 @@ body{
 }
 .custom-primary2{
     background-color: rgb(32, 115, 69);
+}
+
+.custom-surface{
+    background-color: rgb(243, 243, 243);
+}
+.custom-onsurface{
+    background-color: rgb(250, 250, 250);
 }
 
 
