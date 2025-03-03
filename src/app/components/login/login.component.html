@@ -16,18 +16,18 @@
                     <h1 class="h3 mb-3 fw-normal text-start mb-5">Sign in</h1>
                 
                     <div class="form-floating mb-3">
-                      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                      <input [(ngModel)]="loginObj.email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                       <label for="floatingInput">Email address</label>
                     </div>
                     <div class="form-floating my-4">
-                      <input type="password" class="form-control " id="floatingPassword" placeholder="Password">
+                      <input [(ngModel)]="loginObj.password" type="password" class="form-control " id="floatingPassword" placeholder="Password">
                       <label for="floatingPassword">Password</label>
                     </div>
                 
                     <div class=" text-start small mb-4 ">
                     <a href="#" class="link-secondary">Forgot password</a>
                     </div>
-                    <button class="btn btn-secondary w-100 py-2 mt-4"  style="border-radius: 1.5rem;" type="submit">Sign in</button>
+                    <button (click)="onSignIn()"  class="btn btn-secondary w-100 py-2 mt-4"  style="border-radius: 1.5rem;" type="submit">Sign in</button>
                     <div class=" text-center small mt-3 my-4">
                         <a  href="#" class=" link-secondary  mb-1 small ">Need help?</a>
                     </div>

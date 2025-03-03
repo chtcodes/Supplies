@@ -4,33 +4,48 @@ import { SupplyRequestComponent } from './components/supply-request/supply-reque
 import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'index',
+        redirectTo: 'login',
         pathMatch: 'full'
     },
     {
-        path: 'index',
-        component: IndexComponent,
+        path: 'login',
+        component: LoginComponent,
        
     },
     {
-        path: 'home',
-        component: HomeComponent
+        path: 'layout',
+        component: LayoutComponent,
+       
     },
     {
-        path: 'supplyRequest',
-        component: SupplyRequestComponent
+        path: '',
+        component: LayoutComponent,
+        children: [
+            {
+                path: 'home',
+                component: HomeComponent
+            },
+            {
+                path: 'supplyRequest',
+                component: SupplyRequestComponent
+            },
+            {
+                path: 'settings',
+                component: SettingsComponent
+            },
+            {
+                path: 'users',
+                component: UsersComponent
+            }
+
+        ],
     },
-    {
-        path: 'settings',
-        component: SettingsComponent
-    },
-    {
-        path: 'users',
-        component: UsersComponent
-    }
+   
    
 ];
