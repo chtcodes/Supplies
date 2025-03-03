@@ -1,0 +1,93 @@
+
+
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header custom-table-header-background">
+                List of Faculties
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-striped table-hover table-bordered">
+                            <thead class="">
+                                <tr>
+                                    <th class="table-success">Faculty name</th>
+                                    <th class="table-success">Code</th>
+                                    <th class="table-success"></th>
+
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let FacultyObj of facultyList; let i = index" >
+                                        <td>{{FacultyObj.facultyName}}</td>
+                                        <td>{{FacultyObj.code}}</td>
+                                        <td class="text-center ">
+                                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                <button (click)="onEdit(FacultyObj)" class="btn btn-outline-secondary me-md-2 btn-sm" type="button">Edit</button>
+                                                <button (click)="onDelete(FacultyObj.id)" class="btn btn-outline-danger btn-sm" type="button">Delete</button>
+                                              </div>
+                                        
+                                        </td>
+    
+                                </tr>
+                                
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header custom-table-header-background ">
+                Create new faculty
+            </div>
+            <div class="card-body">
+                <form [formGroup]="facultyForm" >
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="FacultyName" class="form-label">Faculty name</label>
+                            <input id="FacultyName" type="text" formControlName="facultyName" class="form-control" required>
+                            @if(facultyForm.controls['facultyName'].touched){
+                                <div class="form-text text-danger">
+                                    @if(facultyForm.controls['facultyName'].errors?.['required']){
+                                        <span>
+                                            Required*
+                                        </span>
+                                    }
+                                </div>
+                            }
+                        </div>
+                        <div class="col-6">
+                            <label for="code" class="form-label">Code</label>
+                            <input id="code" type="text" formControlName="code" class="form-control" required>
+                            @if(facultyForm.controls['code'].touched){
+                                <div class="form-text text-danger">
+                                    @if(facultyForm.controls['code'].errors?.['required']){
+                                        <span>
+                                            Required*
+                                        </span>
+                                    }
+                                    @if(facultyForm.controls['code'].errors?.['maxlength']){
+                                        <span>
+                                            Maximum length is 4 characters!
+                                        </span>
+                                    }
+                                </div>
+                            }
+                        </div>
+                        <div class="col-6 mt-4">
+
+                            <button type="submit" [disabled]="facultyForm.invalid" (click)="onSaveFaculty()" class="btn small btn-success me-4  px-5" >{{isEditMode && !facultyForm.invalid ? 'Update' : 'Create new'}}</button>
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>

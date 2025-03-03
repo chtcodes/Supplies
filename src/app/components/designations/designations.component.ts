@@ -1,5 +1,5 @@
 import { Component, inject, OnInit, signal, NgModule } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { DesignationsService } from '../../services/designations.service';
 import { APIResponseModel, IDesignation } from '../../model/model';
 import { Observable } from 'rxjs';
@@ -11,15 +11,16 @@ import { AsyncPipe, CommonModule, JsonPipe } from '@angular/common';
   standalone: true,
   imports: [ReactiveFormsModule, AsyncPipe , JsonPipe , CommonModule],
   templateUrl: './designations.component.html',
-  styleUrl: './designations.component.css'
+  styleUrls: ['./designations.component.css', '../../../styles.css']
 })
 export class DesignationsComponent implements OnInit {
 
   designationForm: FormGroup = new FormGroup({
 
     id: new FormControl(0),
-    designationName: new FormControl(""),
-    grade: new FormControl(""),
+    designationName: new FormControl("", [Validators.required]),
+    grade: new FormControl("", [Validators.required]),
+    code: new FormControl("", Validators.maxLength(5)),
   });
 
 
@@ -99,7 +100,8 @@ export class DesignationsComponent implements OnInit {
     this.designationForm.setValue({
       id: designation.id,
       designationName: designation.designationName,
-      grade: designation.grade
+      grade: designation.grade,
+      code: designation.code,
     });
 
     this.isEditMode = true;

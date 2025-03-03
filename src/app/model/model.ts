@@ -10,3 +10,14 @@ export interface IDesignation{
     designationName : string;
     grade : string;
 }
+export interface IDesignation{
+    id: number;
+    designationName : string;
+    grade : string;
+    code : string;
+}
+export interface IFaculty{
+    id: number;
+    facultyName : string;
+    code : string;
+}

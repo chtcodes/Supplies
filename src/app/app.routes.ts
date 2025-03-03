@@ -6,6 +6,8 @@ import { UsersComponent } from './components/users/users.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { facultyComponent } from './components/faculty/faculty.component';
+import { DesignationsComponent } from './components/designations/designations.component';
 
 export const routes: Routes = [
     {
@@ -38,6 +40,14 @@ export const routes: Routes = [
             {
                 path: 'settings',
                 component: SettingsComponent
+            },
+            {
+                path: 'designation',
+                component: DesignationsComponent
+            },
+            {
+                path: 'faculty',
+                component: facultyComponent
             },
             {
                 path: 'users',
