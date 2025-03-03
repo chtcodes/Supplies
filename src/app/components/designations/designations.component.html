@@ -1,5 +1,7 @@
+
+
 <div class="row">
-    <div class="col-8">
+    <div class="col-6">
         <div class="card">
             <div class="card-header">
                 Designations List
@@ -7,31 +9,31 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12">
-                        <table class="table table-striped">
-                            <thead>
+                        <table class="table table-striped table-hover table-bordered">
+                            <thead class="">
                                 <tr>
-                                    <th>Destination name</th>
-                                    <th>Grade</th>
+                                    <th class="table-success">Designation name</th>
+                                    <th class="table-success">Grade</th>
+                                    <th class="table-success"></th>
 
                                 </tr>
 
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Hello data</td>
-                                    <td>Hello data</td>
-
+                                <tr *ngFor="let designationObj of designationsList; let i = index" >
+                                        <td>{{designationObj.designationName}}</td>
+                                        <td>{{designationObj.grade}}</td>
+                                        <td class="text-center ">
+                                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                <button (click)="onEdit(designationObj)" class="btn btn-outline-secondary me-md-2 btn-sm" type="button">Edit</button>
+                                                <button (click)="onDelete(designationObj.id)" class="btn btn-outline-danger btn-sm" type="button">Delete</button>
+                                              </div>
+                                        
+                                        </td>
+    
                                 </tr>
-                                <tr>
-                                    <td>Hello data</td>
-                                    <td>Hello data</td>
-
-                                </tr>
-                                <tr>
-                                    <td>Hello data</td>
-                                    <td>Hello data</td>
-
-                                </tr>
+                                
+                                
                             </tbody>
                         </table>
                     </div>
@@ -41,25 +43,25 @@
     </div>
 
 
-    <div class="col-4">
+    <div class="col-6">
         <div class="card">
             <div class="card-header">
-                New designation
+                Create new designation
             </div>
             <div class="card-body">
-                <form>
+                <form [formGroup]="designationForm" >
                     <div class="row">
                         <div class="col-6">
-                            <label class="form-label">Destination name</label>
-                            <input type="text" formControlName="projectName" class="form-control">
+                            <label for="designationName" class="form-label">Destination name</label>
+                            <input id="designationName" type="text" formControlName="designationName" class="form-control" required>
                         </div>
                         <div class="col-6">
-                            <label class="form-label">Grade</label>
-                            <input type="text" formControlName="projectName" class="form-control">
+                            <label for="grade" class="form-label">Grade</label>
+                            <input id="grade" type="text" formControlName="grade" class="form-control" required>
                         </div>
                         <div class="col-6 mt-4">
 
-                            <button type="submit" class="btn small btn-outline-success me-4 ">Create new</button>
+                            <button type="submit" [disabled]="designationForm.invalid" (click)="onSaveDesignation()" class="btn small btn-success me-4  px-5" >{{isEditMode && !designationForm.invalid ? 'Update' : 'Create new'}}</button>
 
 
                         </div>
