@@ -59,16 +59,33 @@ export class DesignationsComponent implements OnInit {
     const formValue = this.designationForm.value;
     console.log('Form value: ', formValue);
 
-    this.designationService.createDesignation(formValue).subscribe(
-      (res: APIResponseModel<IDesignation>) => {
-        console.log("Designation created successfully.", res);
-        this.designationForm.reset();
-        this.loadDesignations();
+    if(!this.isEditMode){
+      this.designationService.createDesignation(formValue).subscribe(
+        (res: APIResponseModel<IDesignation>) => {
+          console.log("Designation created successfully.", res);
+          this.designationForm.reset();
+          this.loadDesignations();
+  
+        }, 
+      (error)=> {
+        alert("Designation already exists!");
+        console.error("Error creating designation: ", error);
+      })
+    }else{
+      this.designationService.updateDesignation(formValue).subscribe(
+        (res: APIResponseModel<IDesignation>) => {
+          console.log("Designation updated successfully.", res);
+          this.designationForm.reset();
+          this.loadDesignations();
+  
+        }, 
+      (error)=> {
+        alert("Designation already exists!");
+        console.error("Error updating designation: ", error);
+      })
 
-      }, 
-    (error)=> {
-      console.error("Error creating designation: ", error);
-    })
+    }
+   
   }
 
  

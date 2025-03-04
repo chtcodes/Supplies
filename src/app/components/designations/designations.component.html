@@ -59,47 +59,53 @@
                             <input id="designationName" type="text" formControlName="designationName"
                                 class="form-control" required>
                             @if(designationForm.controls['designationName'].touched){
-                                <div class="form-text text-danger">
-                                    @if(designationForm.controls['designationName'].errors?.['required']){
-                                        <span>
-                                            Required*
-                                        </span>
-                                    }
-                                </div>
+                            <div class="form-text text-danger">
+                                @if(designationForm.controls['designationName'].errors?.['required']){
+                                <span>
+                                    Required*
+                                </span>
+                                }
+                            </div>
                             }
                         </div>
                         <div class="col-6">
                             <label for="grade" class="form-label">Grade</label>
                             <input id="grade" type="text" formControlName="grade" class="form-control" required>
                             @if(designationForm.controls['grade'].touched){
-                                <div class="form-text text-danger">
-                                    @if(designationForm.controls['grade'].errors?.['required']){
-                                        <span>
-                                            Required*
-                                        </span>
-                                    }
-                                </div>
+                            <div class="form-text text-danger">
+                                @if(designationForm.controls['grade'].errors?.['required']){
+                                <span>
+                                    Required*
+                                </span>
+                                }
+                            </div>
                             }
                         </div>
                         <div class="col-6">
                             <label for="code" class="form-label">Code</label>
                             <input id="code" type="text" formControlName="code" class="form-control">
                             @if(designationForm.controls['code'].touched){
-                                <div class="form-text text-danger">
-                                    @if(designationForm.controls['code'].errors?.['maxlength']){
-                                        <span>
-                                            Maximum length 5 characters.
-                                        </span>
-                                    }
-                                </div>
+                            <div class="form-text text-danger">
+                                @if(designationForm.controls['code'].errors?.['maxlength']){
+                                <span>
+                                    Maximum length 5 characters.
+                                </span>
+                                }
+                            </div>
                             }
                         </div>
 
                         <div class="row mt-3">
-                            <div class="col-12 ">
+                            <div class="col-12 d-flex flex-wrap gap-2">
                                 <button type="submit" [disabled]="designationForm.invalid" (click)="onSaveDesignation()"
                                     class="btn small btn-success me-4  px-5">{{isEditMode &&
-                                    !designationForm.invalid ? 'Update' : 'Create new'}}
+                                    !designationForm.invalid ? 'Update' : 'Create'}}
+                                </button>
+
+
+                                <button type="reset" [disabled]="designationForm.invalid"
+                                    (click)="designationForm.reset()"
+                                    class="btn small btn-outline-success me-4  px-4">Reset
                                 </button>
                             </div>
                         </div>

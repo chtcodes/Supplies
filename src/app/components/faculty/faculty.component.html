@@ -1,5 +1,3 @@
-
-
 <div class="row">
     <div class="col-6">
         <div class="card">
@@ -20,20 +18,23 @@
 
                             </thead>
                             <tbody>
-                                <tr *ngFor="let FacultyObj of facultyList; let i = index" >
-                                        <td>{{FacultyObj.facultyName}}</td>
-                                        <td>{{FacultyObj.code}}</td>
-                                        <td class="text-center ">
-                                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                <button (click)="onEdit(FacultyObj)" class="btn btn-outline-secondary me-md-2 btn-sm" type="button">Edit</button>
-                                                <button (click)="onDelete(FacultyObj.id)" class="btn btn-outline-danger btn-sm" type="button">Delete</button>
-                                              </div>
-                                        
-                                        </td>
-    
+                                <tr *ngFor="let FacultyObj of facultyList; let i = index">
+                                    <td>{{FacultyObj.facultyName}}</td>
+                                    <td>{{FacultyObj.code}}</td>
+                                    <td class="text-center ">
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                            <button (click)="onEdit(FacultyObj)"
+                                                class="btn btn-outline-secondary me-md-2 btn-sm"
+                                                type="button">Edit</button>
+                                            <button (click)="onDelete(FacultyObj.id)"
+                                                class="btn btn-outline-danger btn-sm" type="button">Delete</button>
+                                        </div>
+
+                                    </td>
+
                                 </tr>
-                                
-                                
+
+
                             </tbody>
                         </table>
                     </div>
@@ -49,45 +50,54 @@
                 Create new faculty
             </div>
             <div class="card-body">
-                <form [formGroup]="facultyForm" >
+                <form [formGroup]="facultyForm">
                     <div class="row">
                         <div class="col-6">
                             <label for="FacultyName" class="form-label">Faculty name</label>
-                            <input id="FacultyName" type="text" formControlName="facultyName" class="form-control" required>
+                            <input id="FacultyName" type="text" formControlName="facultyName" class="form-control"
+                                required>
                             @if(facultyForm.controls['facultyName'].touched){
-                                <div class="form-text text-danger">
-                                    @if(facultyForm.controls['facultyName'].errors?.['required']){
-                                        <span>
-                                            Required*
-                                        </span>
-                                    }
-                                </div>
+                            <div class="form-text text-danger">
+                                @if(facultyForm.controls['facultyName'].errors?.['required']){
+                                <span>
+                                    Required*
+                                </span>
+                                }
+                            </div>
                             }
                         </div>
                         <div class="col-6">
                             <label for="code" class="form-label">Code</label>
                             <input id="code" type="text" formControlName="code" class="form-control" required>
                             @if(facultyForm.controls['code'].touched){
-                                <div class="form-text text-danger">
-                                    @if(facultyForm.controls['code'].errors?.['required']){
-                                        <span>
-                                            Required*
-                                        </span>
-                                    }
-                                    @if(facultyForm.controls['code'].errors?.['maxlength']){
-                                        <span>
-                                            Maximum length is 4 characters!
-                                        </span>
-                                    }
-                                </div>
+                            <div class="form-text text-danger">
+                                @if(facultyForm.controls['code'].errors?.['required']){
+                                <span>
+                                    Required*
+                                </span>
+                                }
+                                @if(facultyForm.controls['code'].errors?.['maxlength']){
+                                <span>
+                                    Maximum length is 4 characters!
+                                </span>
+                                }
+                            </div>
                             }
                         </div>
-                        <div class="col-6 mt-4">
-
-                            <button type="submit" [disabled]="facultyForm.invalid" (click)="onSaveFaculty()" class="btn small btn-success me-4  px-5" >{{isEditMode && !facultyForm.invalid ? 'Update' : 'Create new'}}</button>
-
-
                         </div>
-                    </div>
+                        <div class="row mt-3">
+                            <div class="col-12 d-flex align-items-center gap-2">
+                                <button type="submit" [disabled]="facultyForm.invalid" (click)="onSaveFaculty()"
+                                    class="btn small btn-success px-5">
+                                    {{ isEditMode && !facultyForm.invalid ? 'Update' : 'Create' }}
+                                </button>
+                                
+                                <button type="reset" [disabled]="facultyForm.invalid" (click)="facultyForm.reset()"
+                                    class="btn small btn-outline-success px-4">
+                                    Reset
+                                </button>
+                            </div>
+                        </div>
+                        
                 </form>
             </div>
