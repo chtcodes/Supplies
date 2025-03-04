@@ -1,89 +1,88 @@
-
-<app-alert [alertMessage]="'No new notifications!'" [alertType]="'info'"></app-alert>
-
-<div class="container">
-
-    
-
-<div class="container">
-
+<div class="container-fluid">
     <div class="row">
-        <div class="col-3 my-3">
-            <div class="card text-center custom-onsurface px-1 py-3 " >
-                <div class="card-body">
-                  <h4 class="card-title mb-4 title-small">Supply Requests</h4>
-                  <a  class="card-link btn btn-outline-success" routerLink="/supplyRequest">View Requests</a>
-                  <!-- <a  class="card-link btn btn-success">Create</a> -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+            <div class="card h-100 text-center custom-onsurface px-1 py-1">
+                <div class="card-body container-fluid">
+                    <div class="fs-2 mb-3">
+                        <i class="bi bi-file-earmark-plus" style="font-size: 36px;"></i>
+                        <h5 class="card-title title-small">Supply Requests</h5>
+                    </div>
+                    <a class="card-link btn btn-outline-success" routerLink="/supplyRequest">View Requests</a>
                 </div>
             </div>
         </div>
-        <div class="col-3 my-3">
-            <div class="card text-center custom-onsurface px-1 py-3 " >
-                <div class="card-body">
-                  <h4 class="card-title mb-4 title-small">Reports</h4>
-                  <a href="#" class="card-link btn btn-outline-success">View reports</a>
-                  <!-- <a href="#" class="card-link btn btn-success">Create</a> -->
-                </div>
-            </div>
-        </div>
-        <div class="col-3 my-3">
-            <div class="card text-center custom-onsurface px-1 py-3 " >
-                <div class="card-body">
-                  <h4 class="card-title mb-4 title-small">Vendors</h4>
-                  <a href="#" class="card-link btn btn-outline-success">View vendors</a>
-                  <!-- <a href="#" class="card-link btn btn-success">Create</a> -->
-                </div>
-            </div>
-        </div>
-        <div class="col-3 my-3">
-            <div class="card text-center custom-onsurface px-1 py-3 " >
-                <div class="card-body">
-                  <h4 class="card-title mb-4 title-small">Procurement</h4>
-                  <a href="#" class="card-link btn btn-outline-success">View Progress</a>
-                  
-                </div>
-            </div>
-        </div>
-        <div class="col-3 my-3">
-            <div class="card text-center custom-onsurface px-1 py-3 " >
-                <div class="card-body">
-                  <h4 class="card-title mb-4 title-small">View Logs</h4>
-                  <a href="#" class="card-link btn btn-outline-success">Audit log</a>
-                  <a href="#" class="card-link btn btn-outline-success">Stores log</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3 my-3">
-            <div class="card text-center custom-onsurface px-1 py-3 " >
-                <div class="card-body">
-                  <h4 class="card-title mb-4 title-small">Users</h4>
-                  <a href="#" class="card-link btn btn-outline-success">Manage users</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3 my-3">
-            <div class="card text-center custom-onsurface px-1 py-3 " >
-                <div class="card-body">
-                  <h4 class="card-title mb-4 title-small">User Activity</h4>
-                  <a href="#" class="card-link btn btn-outline-success">Check activity log</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3 my-3">
-            <div class="card text-center custom-onsurface px-1 py-3 " >
-                <div class="card-body">
-                  <h4 class="card-title mb-4 title-small">Settings</h4>
-                  <a  class="card-link btn btn-outline-success" routerLink="/settings">Set application settings</a>
-                </div>
-            </div>
-        </div>
-      
         
-        
-       
-       
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+            <div class="card h-100 text-center custom-onsurface px-1 py-1">
+                <div class="card-body container-fluid">
+                    <div class="fs-2 mb-3">
+                        <i class="bi bi-file-earmark-spreadsheet" style="font-size: 36px;"></i>
+                        <h5 class="card-title mb-4 title-small">Reports</h5>
+                    </div>
+                    <a href="#" class="card-link btn btn-outline-success">View reports</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+            <div class="card h-100 text-center custom-onsurface px-1 py-1">
+                <div class="card-body container-fluid">
+                    <div class="fs-2 mb-3">
+                        <i class="bi bi-p-circle" style="font-size: 36px;"></i>
+                        <h5 class="card-title mb-4 title-small">Procurement</h5>
+                    </div>
+                    <a href="#" class="card-link btn btn-outline-success">View Progress</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+            <div class="card h-100 text-center custom-onsurface px-1 py-1">
+                <div class="card-body container-fluid">
+                    <div class="fs-2 mb-3">
+                        <i class="bi bi-card-list" style="font-size: 36px;"></i>
+                        <h5 class="card-title mb-4 title-small">View Logs</h5>
+                    </div>
+                    <a href="#" class="card-link btn btn-outline-success mb-1">Audit log</a>
+                    <a href="#" class="card-link btn btn-outline-success">Stores log</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+            <div class="card h-100 text-center custom-onsurface px-1 py-3">
+                <div class="card-body container-fluid">
+                    <h5 class="card-title mb-4 title-small">Vendors</h5>
+                    <a href="#" class="card-link btn btn-outline-success">View vendors</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+            <div class="card h-100 text-center custom-onsurface px-1 py-3">
+                <div class="card-body container-fluid">
+                    <h5 class="card-title mb-4 title-small">Users</h5>
+                    <a href="#" class="card-link btn btn-outline-success">Manage users</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+            <div class="card h-100 text-center custom-onsurface px-1 py-3">
+                <div class="card-body container-fluid">
+                    <h5 class="card-title mb-4 title-small">User Activity</h5>
+                    <a href="#" class="card-link btn btn-outline-success">Check activity log</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+            <div class="card h-100 text-center custom-onsurface px-1 py-3">
+                <div class="card-body container-fluid">
+                    <h5 class="card-title mb-4 title-small">Settings</h5>
+                    <a class="card-link btn btn-outline-success" routerLink="/settings">Set application settings</a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
-
 </div>
