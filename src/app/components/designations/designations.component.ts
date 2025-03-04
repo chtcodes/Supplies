@@ -59,7 +59,7 @@ export class DesignationsComponent implements OnInit {
     const formValue = this.designationForm.value;
     console.log('Form value: ', formValue);
 
-    if(!this.isEditMode){
+    // if(!this.isEditMode){
       this.designationService.createDesignation(formValue).subscribe(
         (res: APIResponseModel<IDesignation>) => {
           console.log("Designation created successfully.", res);
@@ -71,20 +71,21 @@ export class DesignationsComponent implements OnInit {
         alert("Designation already exists!");
         console.error("Error creating designation: ", error);
       })
-    }else{
-      this.designationService.updateDesignation(formValue).subscribe(
-        (res: APIResponseModel<IDesignation>) => {
-          console.log("Designation updated successfully.", res);
-          this.designationForm.reset();
-          this.loadDesignations();
+    // }else{
+      // const dId :number = formValue.value.id;
+      // this.designationService.updateDesignation(dId, formValue).subscribe(
+      //   (res: APIResponseModel<IDesignation>) => {
+      //     console.log("Designation updated successfully.", res);
+      //     this.designationForm.reset();
+      //     this.loadDesignations();
   
-        }, 
-      (error)=> {
-        alert("Designation already exists!");
-        console.error("Error updating designation: ", error);
-      })
+      //   }, 
+      // (error)=> {
+      //   alert("Designation already exists!");
+      //   console.error("Error updating designation: ", error);
+      // })
 
-    }
+    // }
    
   }
 

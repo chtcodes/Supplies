@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DesignationsComponent } from '../designations/designations.component';
 import { facultyComponent } from '../faculty/faculty.component';
+import { DepartmentComponent } from '../department/department.component';
 
 @Component({
   selector: 'app-settings',
   standalone: true,
-  imports: [CommonModule,DesignationsComponent, facultyComponent ],
+  imports: [CommonModule,DesignationsComponent, facultyComponent, DepartmentComponent ],
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css','../../../styles.css']
 })

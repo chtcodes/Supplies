@@ -10,7 +10,8 @@
                 </button>
             </div>
             <div class="btn-group m-1" role="group" aria-label="Second group">
-                <button class="btn btn-light" type="button" style="font-size: 14px;">
+                <button (click)="changeTab('departments')" 
+                [ngClass]="currentComponent == 'departments'? 'btn  custom-hover' : 'btn btn-light'" type="button" style="font-size: 14px;">
                     <i class="bi bi-house pe-1" style="font-size: 16px;"></i>
                     Departments management
                 </button>
@@ -83,9 +84,10 @@
             <div class="col-12"  *ngIf="currentComponent == 'faculties'" >
               <app-faculty></app-faculty>
             </div>
-            <div class="col-12">
-             
+            <div class="col-12"  *ngIf="currentComponent == 'departments'" >
+              <app-department></app-department>
             </div>
+            
           </div>
 
 

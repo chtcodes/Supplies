@@ -21,3 +21,10 @@ export interface IFaculty{
     facultyName : string;
     code : string;
 }
+
+export interface IDepartment{
+    id: number;
+    departmentName : string;
+    code: string;
+    faculty : IFaculty;
+}
