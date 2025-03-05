@@ -9,7 +9,7 @@ import { AsyncPipe, CommonModule, JsonPipe } from '@angular/common';
 @Component({
   selector: 'app-designations',
   standalone: true,
-  imports: [ReactiveFormsModule, AsyncPipe , JsonPipe , CommonModule],
+  imports: [ReactiveFormsModule, AsyncPipe, JsonPipe, CommonModule],
   templateUrl: './designations.component.html',
   styleUrls: ['./designations.component.css', '../../../styles.css']
 })
@@ -27,11 +27,11 @@ export class DesignationsComponent implements OnInit {
 
   designationService = inject(DesignationsService);
 
-  designationsList : IDesignation[] =[];
-  
-  isEditMode: boolean = false; 
-  
-  
+  designationsList: IDesignation[] = [];
+
+  isEditMode: boolean = false;
+
+
   ngOnInit(): void {
     //load table
     this.loadDesignations();
@@ -40,56 +40,77 @@ export class DesignationsComponent implements OnInit {
   }
 
 
-  loadDesignations(){
+  loadDesignations() {
     this.designationService.getAllDesignations().subscribe(
       (response) => {
-        console.log('API Response:', response);  
-        console.log('Data:', response.data);     
+        console.log('API Response:', response);
+        console.log('Data:', response.data);
         this.designationsList = response.data;
       },
       (error) => {
         console.error('Error fetching designations:', error);
       }
-    );     
+    );
   }
 
 
 
-  onSaveDesignation() : void{
+  onSaveDesignation(): void {
     const formValue = this.designationForm.value;
-    console.log('Form value: ', formValue);
+    // console.log('Form value: ', formValue);
 
-    // if(!this.isEditMode){
+    //when created
+    if (!this.isEditMode) {
+
       this.designationService.createDesignation(formValue).subscribe(
         (res: APIResponseModel<IDesignation>) => {
           console.log("Designation created successfully.", res);
           this.designationForm.reset();
           this.loadDesignations();
-  
-        }, 
-      (error)=> {
-        alert("Designation already exists!");
-        console.error("Error creating designation: ", error);
-      })
-    // }else{
+        },
+        (error) => {
+          alert("Designation already exists!");
+          console.error("Error creating designation: ", error);
+        })
+
+    } else {
+    //when updated
+      this.designationService.updateDesignation(formValue.id, formValue)
+        .subscribe(
+          (response) => {
+            console.log("Designation updated successfully", response);
+            this.designationForm.reset();
+            this.loadDesignations();
+
+          },
+          (error) => {
+            console.error("Error updating designation", error);
+            this.designationForm.reset();
+            this.loadDesignations();
+          }
+        );
+
+
+
+
       // const dId :number = formValue.value.id;
       // this.designationService.updateDesignation(dId, formValue).subscribe(
       //   (res: APIResponseModel<IDesignation>) => {
       //     console.log("Designation updated successfully.", res);
       //     this.designationForm.reset();
       //     this.loadDesignations();
-  
+
       //   }, 
       // (error)=> {
       //   alert("Designation already exists!");
       //   console.error("Error updating designation: ", error);
       // })
 
-    // }
-   
+    }
+
   }
 
- 
+
 
   // onUpdateDesignation(): void {
   //   const formValue = this.designationForm.value;
@@ -123,20 +144,20 @@ export class DesignationsComponent implements OnInit {
     });
 
     this.isEditMode = true;
-    
+
   }
 
-  onDelete(id: number):void {
+  onDelete(id: number): void {
     let isDelete = confirm("Are you sure you want to delete this entry?");
 
-    if(isDelete){
+    if (isDelete) {
       this.designationService.deleteDesignation(id).subscribe(
         (res: APIResponseModel<string>) => {
-          console.log("Designation deleted successfully: ", res );
+          console.log("Designation deleted successfully: ", res);
           this.loadDesignations();
         },
-        (error)=> {
-          console.error("Error deleting designation: " ,error);
+        (error) => {
+          console.error("Error deleting designation: ", error);
         }
       )
     }

@@ -25,7 +25,8 @@ export class DesignationsService {
 
 
   updateDesignation(id: number, designation: IDesignation): Observable<APIResponseModel<IDesignation>> {
-    return this.http.put<APIResponseModel<IDesignation>>(environment.API_URL + constant.API_METHOD.DESIGNATIONS+ "/" + id, designation);
+    console.log(id);
+    return this.http.put<APIResponseModel<IDesignation>>(environment.API_URL+constant.API_METHOD.DESIGNATIONS+ `/`+ id, designation);
   }
 
 

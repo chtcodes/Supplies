@@ -24,7 +24,7 @@ export class DepartmentService {
 
 
   updateDepartment(id: number, department: IDepartment): Observable<IDepartment> {
-    return this.http.put<IDepartment>(environment.API_URL + constant.API_METHOD.DEPARTMENTS + '/'+id, department);
+    return this.http.put<IDepartment>(environment.API_URL + constant.API_METHOD.DEPARTMENTS + '/${id}', department);
   }
 
 

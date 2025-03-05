@@ -4,44 +4,62 @@
     <div class="btn-toolbar mx-2 py-1 mb-1  " role="toolbar" aria-label="Toolbar with button groups">
       <div class="btn-group me-2" role="group" aria-label="First group">
 
-        <button type="button" style="font-size: 14px;" (click)="changeTab('table')"
+        <!-- <button type="button" style="font-size: 14px;" (click)="changeTab('table')"
           [ngClass]="currentComponent == 'table' ? 'btn custom-hover' : 'btn btn-light'">
           View Supply Requests
-        </button>
-      </div>
-      <div class="btn-group me-2" role="group" aria-label="Second group">
-        <button type="button" style="font-size: 14px;" (click)="changeTab('form')"
-          [ngClass]="currentComponent == 'form' ? 'btn custom-hover' : ' btn btn-light'">
-          Create new supply request
-        </button>
+        </button> -->
+
       </div>
 
-      <!-- <div class="btn-group me-2 custom-right-menu" role="group">
-    <button id="btnGroupDrop1 custom-dropdown-button" type="button" class="btn btn-light dropdown-toggle " style="font-size: 14px;" data-bs-toggle="dropdown" aria-expanded="false">
-      Filter supply requests
-    </button>
+      <a class=" text-dark btn btn-light mx-1 btn-sm" routerLink="/supplyRequest/supplyTable"
+        routerLinkActive="active">View Supply Requests</a>
 
-    <ul class=" custom-dropdown-menu custom-ul" aria-labelledby="btnGroupDrop1">
+      <a class=" text-dark btn btn-light mx-1 btn-sm" routerLink="/supplyRequest/dForm"
+        routerLinkActive="active">Department Request Form</a>
+
+      <a class=" text-dark btn btn-light mx-1 btn-sm" routerLink="/supplyRequest/fForm"
+        routerLinkActive="active">Faculty Approval Form</a>
+
+      <a class=" text-dark btn btn-light mx-1 btn-sm" routerLink="/supplyRequest/sForm"
+        routerLinkActive="active">Supplies Approval Form</a>
+
+      <a class=" text-dark btn btn-light mx-1 btn-sm" routerLink="/supplyRequest/supplyForm"
+        routerLinkActive="active">View Supply Form</a>
+
+      <!-- <ul class=" custom-dropdown-menu custom-ul" aria-labelledby="btnGroupDrop1">
       <li><a class="custom-dropdown-item" href="#">Approved</a></li>
       <li><a class="custom-dropdown-item" href="#">In progress</a></li>
       <li><a class="custom-dropdown-item" href="#">Declined</a></li>
       <li><a class="custom-dropdown-item" href="#">Closed</a></li>
-    </ul>
-  </div> -->
+    </ul> -->
 
-    </div>
+   
+    </div> 
+
   </div>
+</div>
 
 
-  <div class="row">
+
+
+
+<div class="row">
+  <div class="col-12">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+
+
+<!-- <div class="row">
     <div class="col-12" *ngIf="currentComponent == 'form' ">
       <app-supply-form></app-supply-form>
     </div>
     <div class="col-12" *ngIf="currentComponent == 'table'">
       <app-supply-table></app-supply-table>
     </div>
-  </div>
+  </div> -->
 
 
 
-</div>

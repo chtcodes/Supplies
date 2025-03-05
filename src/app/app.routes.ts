@@ -8,6 +8,11 @@ import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { facultyComponent } from './components/faculty/faculty.component';
 import { DesignationsComponent } from './components/designations/designations.component';
+import { DFormComponent } from './components/dform/dform.component';
+import { FFormComponent } from './components/fform/fform.component';
+import { SFormComponent } from './components/sform/sform.component';
+import { SupplyTableComponent } from './components/supply-table/supply-table.component';
+import { SupplyFormComponent } from './components/supply-form/supply-form.component';
 
 export const routes: Routes = [
     {
@@ -35,7 +40,29 @@ export const routes: Routes = [
             },
             {
                 path: 'supplyRequest',
-                component: SupplyRequestComponent
+                component: SupplyRequestComponent,
+                children: [
+                    {
+                        path: 'supplyTable',
+                        component: SupplyTableComponent
+                    },
+                    {
+                        path: 'supplyForm',
+                        component: SupplyFormComponent
+                    },
+                    {
+                        path: 'dForm',
+                        component: DFormComponent
+                    },
+                    {
+                        path: 'fForm',
+                        component: FFormComponent
+                    },
+                    {
+                        path: 'sForm',
+                        component: SFormComponent
+                    },
+                ],
             },
             {
                 path: 'settings',
